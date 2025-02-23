@@ -1,0 +1,54 @@
+theme = "Catppuccin Macchiato"
+default_source = "TorrentGalaxy"
+download_client = "RunCommand"
+timeout = 60
+scroll_padding = 3
+cursor_padding = 4
+save_config_on_change = true
+hot_reload_config = true
+
+[clipboard]
+osc52 = false
+
+[client.command]
+cmd = 'echo "{magnet}" | nc 10.200.1.1 8899'
+shell_cmd = "sh -c"
+
+[client.qBittorrent]
+base_url = "http://10.200.1.1:6866/"
+username = "rizal"
+password = "rizalta"
+
+[client.default_app]
+use_magnet = false
+
+[client.download]
+save_dir = "/home/rizal/Downloads"
+overwrite = true
+create_root_folder = true
+
+[source.nyaa]
+base_url = "https://nyaa.si"
+default_sort = "Date"
+default_sort_dir = "Desc"
+default_filter = "NoFilter"
+default_category = "AllCategories"
+default_search = ""
+rss = false
+
+[source.sukebei]
+base_url = "https://sukebei.nyaa.si/"
+default_sort = "Date"
+default_sort_dir = "Desc"
+default_filter = "NoFilter"
+default_category = "AllCategories"
+default_search = ""
+rss = false
+
+[source.torrentgalaxy]
+base_url = "https://torrentgalaxy.to"
+default_sort = "Date"
+default_sort_dir = "Desc"
+default_filter = "NoFilter"
+default_category = "AllCategories"
+default_search = ""
