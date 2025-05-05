@@ -73,6 +73,10 @@ alias ll='eza -lha --icons=auto --sort=name --group-directories-first'
 alias ld='eza -lhD --icons=auto'
 alias lt='eza --icons=auto --tree'
 
+# Script alias
+alias ffvpn="~/scripts/ffvpn.sh"
+alias playtor="~/scripts/play_torrent.sh"
+
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
@@ -84,9 +88,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # GOBIN path
 export PATH=$PATH:$HOME/go/bin
-
-# Script alias
-alias ffvpn="~/scripts/ffvpn.sh"
 
 # bun completions
 [ -s "/home/rizal/.bun/_bun" ] && source "/home/rizal/.bun/_bun"
