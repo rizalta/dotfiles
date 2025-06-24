@@ -83,3 +83,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # bun completions
 [ -s "/home/rizal/.bun/_bun" ] && source "/home/rizal/.bun/_bun"
+
+# editor
+export EDITOR=nvim
+export VISUAL=nvim
