@@ -1,11 +1,13 @@
 font-family = JetBrains Mono
+font-size = 14
+
 theme = catppuccin-mocha
 background-opacity = 0.9
-macos-option-as-alt = left
+background-blur = 10
 cursor-invert-fg-bg
-font-size = 14
+
 window-padding-y = 15
 window-padding-x = 15
+
+macos-option-as-alt = left
 macos-titlebar-style = hidden
-window-height = 4000
-window-width = 2000
