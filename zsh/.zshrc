@@ -72,7 +72,6 @@ alias ls='eza -1   --icons=auto'
 alias ll='eza -lha --icons=auto --sort=name --group-directories-first'
 alias ld='eza -lhD --icons=auto'
 alias lt='eza --icons=auto --tree'
-alias y='yazi'
 alias iina='open -a IINA'
 
 # Script alias
@@ -85,6 +84,15 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # bun completions
 [ -s "/home/rizal/.bun/_bun" ] && source "/home/rizal/.bun/_bun"
+
+# yazi y shell wrapper
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
 
 # editor
 export EDITOR=nvim
