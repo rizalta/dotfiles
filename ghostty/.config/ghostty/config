@@ -11,3 +11,6 @@ window-padding-x = 15
 
 macos-option-as-alt = left
 macos-titlebar-style = hidden
+
+confirm-close-surface = false
+quit-after-last-window-closed = true
