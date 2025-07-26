@@ -7,7 +7,7 @@ return {
 					gopls = {
 						hints = {
 							assignVariableTypes = false,
-							compositeLiteralFields = true,
+							compositeLiteralFields = false,
 							compositeLiteralTypes = false,
 							constantValues = true,
 							functionTypeParameters = true,
