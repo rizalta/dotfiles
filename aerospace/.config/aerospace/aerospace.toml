@@ -58,6 +58,8 @@ automatically-unhide-macos-hidden-apps = false
     alt-f = 'workspace F'
     alt-n = 'workspace N'
     alt-t = 'workspace T'
+    alt-v = 'workspace V'
+    alt-w = 'workspace W'
 
     alt-shift-1 = 'move-node-to-workspace 1'
     alt-shift-2 = 'move-node-to-workspace 2'
@@ -72,6 +74,8 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-f = 'move-node-to-workspace F'
     alt-shift-n = 'move-node-to-workspace N'
     alt-shift-t = 'move-node-to-workspace T'
+    alt-shift-v = 'move-node-to-workspace V'
+    alt-shift-w = 'move-node-to-workspace W'
 
     alt-m = 'fullscreen'
 
@@ -110,3 +114,16 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
   if.app-id = 'com.apple.finder'
   run = 'move-node-to-workspace F'
+
+[[on-window-detected]]
+  if.app-id = 'ch.protonvpn.mac'
+  run = 'layout floating'
+
+[[on-window-detected]]
+  if.window-title-regex-substring = 'mpv'
+  run = 'move-node-to-workspace V'
+
+
+[[on-window-detected]]
+  if.app-id = 'net.whatsapp.WhatsApp'
+  run = 'move-node-to-workspace W'
