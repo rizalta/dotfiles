@@ -97,3 +97,16 @@ function y() {
 # editor
 export EDITOR=nvim
 export VISUAL=nvim
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/rizal/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
+# pnpm
+export PNPM_HOME="/Users/rizal/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
