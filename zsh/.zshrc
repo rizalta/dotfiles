@@ -23,20 +23,30 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Load completions
+autoload -Uz compinit
+ZCOMPDUMP="${XDG_CACHE_HOME:-$HOME/.cache}/.zcompdump"
+if [[ -n $ZCOMPDUMP(#qNmh+24) ]]; then
+  compinit -d "$ZCOMPDUMP"
+  if [[ ! -f "$ZCOMPDUMP.zwc" || "$ZCOMPDUMP" -nt "$ZCOMPDUMP.zwc" ]]; then
+    zcompile "$ZCOMPDUMP"
+  fi
+else
+  compinit -C -d "$ZCOMPDUMP"
+fi
+
 # Add zinit plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
+zinit wait lucid for \
+  zsh-users/zsh-syntax-highlighting \
+  zsh-users/zsh-completions \
+  zsh-users/zsh-autosuggestions \
+  Aloxaf/fzf-tab
 
 # Add in snippets
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
-
-# Load completions
-autoload -U compinit && compinit
 
 zinit cdreplay -q
 
@@ -97,11 +107,6 @@ function y() {
 # editor
 export EDITOR=nvim
 export VISUAL=nvim
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/rizal/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
 
 # pnpm
 export PNPM_HOME="/Users/rizal/Library/pnpm"
